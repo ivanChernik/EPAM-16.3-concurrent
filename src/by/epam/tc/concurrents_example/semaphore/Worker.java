@@ -5,14 +5,12 @@ import java.util.concurrent.Semaphore;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-/*У работников есть одна общая тележка, один загружает ее, другой выгружает,
- * семафор блокирует тележку когда она занята одним работником.
- * 
- * */
+//СЂР°Р±РѕС‚РЅРёРє
 public class Worker extends Thread {
 
     private Semaphore semaphore;
     private String workerName;
+    //РїСЂРѕРІРµСЂСЏРµС‚ СЂР°Р±РѕС‡РёР№ РіСЂСѓР·РёС‚ РёР»Рё РІС‹РіСЂСѓР¶Р°РµС‚
     private boolean isAdder;
     private final static Logger LOGGER = LogManager.getRootLogger();
     
@@ -31,9 +29,12 @@ public class Worker extends Thread {
             LOGGER.debug(workerName + " got access to cart...");
             for (int i = 0 ; i < 5 ; i++) {
                 if (isAdder)
-                    Cart.release();
+                	//Р·Р°РіСЂСѓР·РёС‚СЊ
+                	Cart.load();
                 else
-                    Cart.load();
+                	//РІС‹РіСЂСѓР·РёС‚СЊ
+                	Cart.release();
+                    
                 
                 LOGGER.debug(workerName + " changed weight to: " + Cart.getWeight());
                 Thread.sleep(10L);

@@ -1,14 +1,16 @@
 package by.epam.tc.concurrents_example.semaphore;
 
-//����� �������
+//общая тачка для рабочих
 public class Cart {
 	private static int weight = 0;
 
-	public static void load() {
+	//выгрузить
+	public static void release() {
 		weight--;
 	}
 
-	public static void release() {
+	//загрузить
+	public static void load() {
 		weight++;
 	}
 

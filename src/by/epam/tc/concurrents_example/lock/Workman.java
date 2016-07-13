@@ -12,10 +12,6 @@ import org.apache.log4j.Logger;
 
 import by.epam.tc.concurrents_example.semaphore.Cart;
 
-/*У работников есть одна общая тележка, один загружает ее, другой выгружает,
- * lock блокирует тележку когда она занята одним работником.
- * 
- * */
 
 public class Workman extends Thread {
 
@@ -39,6 +35,7 @@ public class Workman extends Thread {
 		try {
 			for (int i = 0; i < 5; i++) {
 				if (isAdder)
+					//
 					Cart.release();
 				else
 					Cart.load();

@@ -19,14 +19,14 @@ public class PhaseThread implements Runnable {
 
 	public void run() {
 
-		LOGGER.debug(name + " выполняет фазу " + phaser.getPhase());
-		phaser.arriveAndAwaitAdvance(); // сообщаем, что первая фаза достигнута
+		LOGGER.debug(name + " РІС‹РїРѕР»РЅСЏРµС‚ С„Р°Р·Сѓ " + phaser.getPhase());
+		phaser.arriveAndAwaitAdvance(); // СЃРѕРѕР±С‰Р°РµРј, С‡С‚Рѕ РїРµСЂРІР°СЏ С„Р°Р·Р° РґРѕСЃС‚РёРіРЅСѓС‚Р°
 
-		LOGGER.debug(name + " выполняет фазу " + phaser.getPhase());
-		phaser.arriveAndAwaitAdvance(); // сообщаем, что вторая фаза достигнута
+		LOGGER.debug(name + " РІС‹РїРѕР»РЅСЏРµС‚ С„Р°Р·Сѓ " + phaser.getPhase());
+		phaser.arriveAndAwaitAdvance(); // СЃРѕРѕР±С‰Р°РµРј, С‡С‚Рѕ РІС‚РѕСЂР°СЏ С„Р°Р·Р° РґРѕСЃС‚РёРіРЅСѓС‚Р°
 
-		LOGGER.debug(name + " выполняет фазу " + phaser.getPhase());
-		phaser.arriveAndDeregister(); // сообщаем о завершении фаз и удаляем с
-										// регистрации объекты
+		LOGGER.debug(name + " РІС‹РїРѕР»РЅСЏРµС‚ С„Р°Р·Сѓ " + phaser.getPhase());
+		phaser.arriveAndDeregister(); // СЃРѕРѕР±С‰Р°РµРј Рѕ Р·Р°РІРµСЂС€РµРЅРёРё С„Р°Р· Рё СѓРґР°Р»СЏРµРј СЃ
+										// СЂРµРіРёСЃС‚СЂР°С†РёРё РѕР±СЉРµРєС‚С‹
 	}
 }

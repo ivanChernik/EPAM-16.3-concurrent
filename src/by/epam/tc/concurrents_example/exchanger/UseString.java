@@ -18,7 +18,7 @@ public class UseString implements Runnable {
 	public void run() {
 		for (int i = 0; i < 3; i++) {
 			try {
-				//îòäàåì íîâóþ ñòðîêó è ïîëó÷àåì ñîçäàííóþ
+				//Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÑÐµÐ¼ Ð½Ð¾Ð²ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ
 				str = ex.exchange(new String());
 				LOGGER.debug("Got: " + str);
 			} catch (InterruptedException e) {

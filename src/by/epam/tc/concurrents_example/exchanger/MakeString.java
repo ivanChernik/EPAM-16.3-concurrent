@@ -24,7 +24,7 @@ public class MakeString implements Runnable {
 			for (int j = 0; j < 5; j++)
 				str += (char) ch++;
 			try {
-				//ñîçäàåì ñòðîêó è îòïðàâëåì åå, ïîëó÷àåì ïóñòóþ ñòðîêó
+				//ÑÐ¾Ð·Ð´Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ¼ ÐµÐµ, Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ð¿ÑƒÑÑ‚ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ
 				str = ex.exchange(str);
 			} catch (InterruptedException e) {
 				LOGGER.error(e);

@@ -8,14 +8,7 @@ import java.util.concurrent.CyclicBarrier;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-/*
- * В офисах содержится определенное количество принтеров, которые надо запрвлять.
- * Когда заканчивается чернила надо вызывать заправщика принтера из сервиса
- * Т к один принтер заправлять нерезонно, заправщик ждет когда опутеет 3 принтера и
- *  едет запрвлять
- * 
- * 
- * */
+
 
 public class ServiceMan {
 	private CyclicBarrier queue;
@@ -27,7 +20,7 @@ public class ServiceMan {
 		inQueue = new ArrayList<String>();
 		queue = new CyclicBarrier(hardWorking, new Runnable() {
 			@Override
-			//очищает очередь когда количество принтеров превышает 3
+			//РѕС‡РёС‰Р°РµС‚ РѕС‡РµСЂРµРґСЊ РєРѕРіРґР° РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРёРЅС‚РµСЂРѕРІ РїСЂРµРІС‹С€Р°РµС‚ 3
 			public void run() {
 				LOGGER.debug("Filling " + inQueue);
 				inQueue.clear();
